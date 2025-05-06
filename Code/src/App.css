@@ -1,0 +1,247 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --border-radius: 6px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+header h1 {
+  color: var(--dark-color);
+  font-size: 2.2rem;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.panel {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+}
+
+.key-generation {
+  grid-column: 1;
+}
+
+.file-operations {
+  grid-column: 2;
+}
+
+.data-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+h2, h3 {
+  color: var(--dark-color);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.status {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.status.valid {
+  color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
+}
+
+.status.invalid {
+  color: var(--danger-color);
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.roots-section {
+  margin: 15px 0;
+}
+
+.roots-select {
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+}
+
+.public-key {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  word-break: break-all;
+}
+
+.file-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #666;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.data-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .key-generation,
+  .file-operations,
+  .data-panel {
+    grid-column: 1;
+  }
+  
+  .data-panel {
+    grid-template-columns: 1fr;
+  }
+}
